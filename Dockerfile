@@ -1,21 +1,21 @@
-# Python image to use.
-# FROM python:3.10-alpine
 FROM python:3.10-slim
 
-# Set the working directory to /app
-WORKDIR /app
+# Allow statements and log messages to immediately appear in the Knative logs
+ENV PYTHONUNBUFFERED True
 
-# copy the requirements file used for dependencies
-COPY requirements.txt .
+# Copy local code to the container image.
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . ./
+# COPY . .
 
-# Install any needed packages specified in requirements.txt
-# RUN pip install --trusted-host pypi.python.org -r requirements.txt
+# Optional: Upgrade pip version
+# RUN pip3 install --upgrade pip
+
+# Install required libraries
 RUN pip3 install -r requirements.txt
 
-# Copy the rest of the working directory contents into the container at /app
-COPY . .
+ENTRYPOINT ["python", "app.py"]
 
-# Run app.py when the container launches
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
-
-# ENTRYPOINT ["python", "app.py"]
+# CMD gunicorn --bind :$PORT app:app
