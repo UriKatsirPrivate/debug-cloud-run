@@ -1,4 +1,4 @@
-# Cloud Run Hello World with Cloud Code
+# Various ways to debug Cloud Run
 
 ## Evolution of Debugging Cloud Run
 1. Develop and test your code as you would do with any other application.
