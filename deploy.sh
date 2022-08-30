@@ -7,10 +7,10 @@ export GOOGLE_CLOUD_PROJECT=landing-zone-demo-341118
 # gcloud run deploy euro-to-usd --image gcr.io/$GOOGLE_CLOUD_PROJECT/euro-to-usd --platform managed --allow-unauthenticated --region=europe-west4 --set-env-vars=region=europe-west4
 
 # Artifact Registry
-gcloud builds submit --tag europe-west4-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/cloud-run-source-deploy/hello-world-1:latest
+gcloud builds submit --tag europe-west4-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/cloud-run-source-deploy/debug-cloud-run:latest
 
-gcloud run deploy hello-world-1 \
---image europe-west4-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/cloud-run-source-deploy/hello-world-1:latest \
+gcloud run deploy debug-cloud-run \
+--image europe-west4-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/cloud-run-source-deploy/debug-cloud-run:latest \
 --platform managed \
 --allow-unauthenticated \
 --region=europe-west4 \
