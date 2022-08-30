@@ -16,4 +16,6 @@ RUN pip3 install -r requirements.txt
 COPY . .
 
 # Run app.py when the container launches
-ENTRYPOINT ["python", "app.py"]
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
+
+# ENTRYPOINT ["python", "app.py"]
