@@ -11,3 +11,4 @@
 6.1 or use the scripts in the deploy.sh file </br>
 6.2 or use [Cloud Code extension](https://cloud.google.com/code/docs/vscode/deploy-service#deploying_a_cloud_run_service)
 7. Debug the deployed service using [Rookout](https://www.rookout.com/)
+8. [End to End Feature Environments based on Git actions](https://github.com/UriKatsirPrivate/Feature-Environment)
