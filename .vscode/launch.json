@@ -5,6 +5,7 @@
             "name": "Cloud Run: Run/Debug Locally",
             "type": "cloudcode.cloudrun",
             "request": "launch",
+            "autoStop": false,
             "build": {
                 "docker": {
                     "path": "Dockerfile"
