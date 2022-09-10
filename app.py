@@ -27,9 +27,10 @@ def my_form_post():
     euros = request.form["euros"]
     usd = round(c.convert(euros, "EUR", "USD"), 2)
 
-    # region = os.environ.get("region")
+       # region = os.environ.get("region")
     return render_template("form.html", euros=euros, usd=usd)
     
 if __name__ == "__main__":
     # rook.start(token='1a43c7f087d9c43341653af043d498bc800f22a5bc6a70b1e0c0fe232b8b3b3e', labels={"env":"dev"})
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    # app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    app.run(debug=True,host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
