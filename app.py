@@ -6,8 +6,10 @@ import rook
 from flask import Flask
 from flask import render_template, request
 from currency_converter import CurrencyConverter
+rook.start()
 
-rook.start(token='1a43c7f087d9c43341653af043d498bc800f22a5bc6a70b1e0c0fe232b8b3b3e', labels={"env":"dev"})
+# rook.start(token='1a43c7f087d9c43341653af043d498bc800f22a5bc6a70b1e0c0fe232b8b3b3e', labels={"env":"dev"})
+
 # print("Rook Started")
 
 app = Flask(__name__)
