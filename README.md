@@ -1,4 +1,4 @@
-# Various ways to debug Cloud Run
+# Various Ways to Debug Cloud Run
 
 ## Prerequisites
 1. Get your Rookout token by registering [here](https://app.rookout.com/)
