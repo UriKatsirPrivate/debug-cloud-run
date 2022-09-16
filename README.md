@@ -1,6 +1,11 @@
 # Various ways to debug Cloud Run
 
-## Evolution of Debugging Cloud Run
+## Prerequisites
+1. Get your Rookout token by registering [here](https://app.rookout.com/)
+2. Store the token in [GCP Secret Manager](https://cloud.google.com/run/docs/configuring/secrets)
+3. Modify deploy.sh file by replacing the value for --set-secrets flag with your own.
+
+## Evolution of Cloud Run Debugging
 1. Develop and test your code as you would do with any other application.
 2. [Run a Cloud Run service in a local development environment](https://cloud.google.com/sdk/gcloud/reference/beta/code/dev)</br>
 2.1 This command watches the relevant source files for changes. as soon as a change is made, it rebuilds the container and deploy to the local environment.
