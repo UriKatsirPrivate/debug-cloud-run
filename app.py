@@ -6,7 +6,7 @@ import rook
 from flask import Flask
 from flask import render_template, request
 from currency_converter import CurrencyConverter
-rook.start()
+rook.start() # Rookout token is stored in Secret Manager and is loaded into an Environment Variable (ROOKOUT_TOKEN) during deployment.
 
 app = Flask(__name__)
 # region = os.environ.get("region")
