@@ -8,4 +8,4 @@ gunicorn>=20.1.0
 CurrencyConverter>=0.17.1
 
 # https://pypi.org/project/rook/
-rook>=0.1.179
+# rook>=0.1.179
