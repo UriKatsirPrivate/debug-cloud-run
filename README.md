@@ -1,6 +1,6 @@
 # Various Ways to Debug Cloud Run
 
-## Prerequisites
+## Prerequisites (Only if using Rookout)
 1. Get your Rookout token by registering [here](https://app.rookout.com/)
 2. Store the token in [GCP Secret Manager](https://cloud.google.com/run/docs/configuring/secrets)
 3. Modify deploy.sh file by replacing the value for --set-secrets flag with your own.
