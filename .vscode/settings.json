@@ -1,8 +1,0 @@
-{
-  "files.exclude": {
-    ".idea": true,
-    ".readmes": true,
-    ".gitattributes": true,
-    "LICENSE": true
-  }
-}
