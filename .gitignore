@@ -153,3 +153,9 @@ cython_debug/
 
 .vscode/*
 .DS_Store
+.idea/debug-cloud-run.iml
+.idea/misc.xml
+.idea/modules.xml
+.gitignore
+.gitignore
+.idea/vcs.xml
