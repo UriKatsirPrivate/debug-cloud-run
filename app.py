@@ -21,7 +21,7 @@ def my_form_post():
 
     euros = request.form["euros"]
     usd = round(c.convert(euros, "EUR", "USD"), 2)
-    print("Tailing...Some+++More---")
+    print("Tailing...Some+++More---1")
     # region = os.environ.get("region")
     return render_template("form.html", euros=euros, usd=usd)
 
