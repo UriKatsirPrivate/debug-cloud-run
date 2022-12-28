@@ -21,5 +21,5 @@
 8.2 example: gcloud alpha run services logs tail debug-cloud-run --region europe-west4
 
 ## Additional configurations to consider
-1. Note the Dockerfile-distroless file that uses the [distroless](https://github.com/GoogleContainerTools/distroless) container to reduce image size. In this example, it reduced the image size by 41%.
+1. Note the Dockerfile-distroless file that uses the [distroless](https://github.com/GoogleContainerTools/distroless) container to reduce image size. In this example, it reduced the image size by 41% and reduced the number of Vulnerabilities by 28%.
 2. [End to End Feature Environments based on Git actions](https://github.com/UriKatsirPrivate/Feature-Environment)
