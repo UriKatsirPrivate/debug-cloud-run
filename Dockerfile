@@ -1,21 +1,24 @@
-FROM debian:11-slim AS build
-RUN apt-get update && \
-    apt-get install --no-install-suggests --no-install-recommends --yes python3-venv gcc libpython3-dev && \
-    python3 -m venv /venv && \
-    /venv/bin/pip install --upgrade pip setuptools wheel
+FROM python:3.10-slim
 
-# Build the virtualenv as a separate step: Only re-execute this step when requirements.txt changes
-FROM build AS build-venv
-COPY requirements.txt /requirements.txt
-RUN /venv/bin/pip install --disable-pip-version-check -r /requirements.txt
+# Allow statements and log messages to immediately appear in the Knative logs
+ENV PYTHONUNBUFFERED True
 
-# Copy the virtualenv into a distroless image
-FROM gcr.io/distroless/python3-debian11
-COPY --from=build-venv /venv /venv
-COPY . /app
-WORKDIR /app
+# Copy local code to the container image.
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . ./
+# COPY . .
 
-ENTRYPOINT ["/venv/bin/python3", "app.py"]
+# If you get an error message related to Rookout​, ​add the below line.
+# RUN apk update && apk add g++ python3-dev linux-headers
+
+# Optional: Upgrade pip version
+# RUN pip3 install --upgrade pip
+
+# Install required libraries
+RUN pip3 install -r requirements.txt
+
+ENTRYPOINT ["python", "app.py"]
 
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
 # CMD gunicorn --bind :$PORT app:app
