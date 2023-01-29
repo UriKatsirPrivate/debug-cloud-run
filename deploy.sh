@@ -13,8 +13,7 @@ export SERVICE_ACCOUNT_EMAIL=landing-zone-demo-341118@appspot.gserviceaccount.co
 # Artifact Registry
 gcloud builds submit --tag $REGION-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/$ARTIFACT_REGISTRY_NAME/$SERVICE_NAME:latest
 
-# Use gcloud beta to support cpu-boost and execution-environment flags
-gcloud beta run deploy $SERVICE_NAME \
+gcloud run deploy $SERVICE_NAME \
 --image $REGION-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/$ARTIFACT_REGISTRY_NAME/$SERVICE_NAME:latest \
 --platform managed \
 --allow-unauthenticated \
@@ -26,19 +25,5 @@ gcloud beta run deploy $SERVICE_NAME \
 --set-secrets=ROOKOUT_TOKEN=ROOKOUT_TOKEN:1 \
 --update-env-vars ROOKOUT_LABELS="env:prod" \
 --execution-environment=gen2    \
-# --cpu-boost
+--revision-suffix=v1.1    \
 # --set-env-vars=region=$REGION
-
-
-# gcloud run deploy debug-cloud-run \
-# --image europe-west4-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/cloud-run-source-deploy/debug-cloud-run:latest \
-# --platform managed \
-# --allow-unauthenticated \
-# --region=europe-west4 \
-# --ingress=all \
-# --min-instances=0 \
-# --concurrency=20 \
-# --service-account=landing-zone-demo-341118@appspot.gserviceaccount.com \
-# --set-secrets=ROOKOUT_TOKEN=ROOKOUT_TOKEN:1 \
-# --update-env-vars ROOKOUT_LABELS="env:prod"
-# # --set-env-vars=region=europe-west4
