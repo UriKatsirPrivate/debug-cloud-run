@@ -25,5 +25,6 @@ gcloud run deploy $SERVICE_NAME \
 --set-secrets=ROOKOUT_TOKEN=ROOKOUT_TOKEN:1 \
 --update-env-vars ROOKOUT_LABELS="env:prod" \
 --execution-environment=gen2    \
+--update-env-vars ROOKOUT_ENABLE_FORK="True" \
 # --revision-suffix=v1.1    \
 # --set-env-vars=region=$REGION
