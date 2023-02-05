@@ -3,7 +3,7 @@ import rook
 from flask import Flask
 from flask import render_template, request
 from currency_converter import CurrencyConverter
-rook.start() # Rookout token is stored in Secret Manager and is loaded into an Environment Variable (ROOKOUT_TOKEN) during deployment.
+# rook.start() # Rookout token is stored in Secret Manager and is loaded into an Environment Variable (ROOKOUT_TOKEN) during deployment.
 
 app = Flask(__name__)
 # region = os.environ.get("region")
@@ -31,7 +31,7 @@ def my_form_post():
 if __name__ == "__main__":
     # Run in development server
     # app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
-    
-    # Run in production
+    rook.start() # Rookout token is stored in Secret Manager and is loaded into an Environment Variable (ROOKOUT_TOKEN) during deployment.
+        # Run in production
     from waitress import serve
     serve(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
