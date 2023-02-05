@@ -6,7 +6,8 @@
 3. Modify deploy.sh file by replacing the value for --set-secrets flag with your own.
 
 ## Evolution of Cloud Run Debugging
-1. Develop and test your code as you would do with any other application.
+1. Develop and test your code as you would do with any other application. </br>
+1.1 Run the run-venv.sh file to run the code locally using virtual env.
 2. [Run a Cloud Run service in a local development environment](https://cloud.google.com/sdk/gcloud/reference/beta/code/dev)</br>
 2.1 This command watches the relevant source files for changes. as soon as a change is made, it rebuilds the container and deploy to the local environment.
 3. [Delete the local development environment](https://cloud.google.com/sdk/gcloud/reference/beta/code/clean-up)
