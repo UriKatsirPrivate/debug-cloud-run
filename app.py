@@ -30,8 +30,9 @@ def my_form_post():
 
 if __name__ == "__main__":
     # Run in development server
-    # app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
     rook.start() # Rookout token is stored in Secret Manager and is loaded into an Environment Variable (ROOKOUT_TOKEN) during deployment.
-        # Run in production
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    
+    # Run in production
+    # from waitress import serve
+    # serve(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
